@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#121212"><meta name="description" content="EM-01 Concept Runner — Emoon3D's first RC model. Buy the complete kit or chassis parts directly.">
+<title>EM-01 Concept Runner — Emoon3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f2ec;--paper2:#ebe8e0;--ink:#1b1b1b;--muted:#77736c;--graphite:#1c1c1c;--graphite2:#2a2a2a;--line:#d6d2c8;--copper:#d9713b;--copper-light:#e89a6a;--warm:#faf8f3;--whatsapp:#25D366;--max:1320px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.wrap{width:min(90%,var(--max));margin:auto}
+.mono,.eyebrow,.nav a,.tag,.spec-label,.step-no{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.12em}
+.eyebrow{font-size:10px;color:#8a7a6a}
+header{height:74px;position:sticky;top:0;z-index:30;background:#f4f2eced;border-bottom:1px solid #ddd8cd;backdrop-filter:blur(16px)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{font:700 24px 'Space Grotesk';letter-spacing:-1.8px;color:var(--ink)}.brand span{color:var(--copper)}.brand small{display:block;font:9px 'DM Mono';letter-spacing:.2em;color:#9a9284;margin-top:2px}
+.navlinks{display:flex;gap:24px;color:#5c564e;font:9px 'DM Mono';text-transform:uppercase;letter-spacing:.1em}.navlinks a:hover,.nav-cta:hover{color:var(--copper)}
+.nav-cta{padding:11px 0;border-bottom:1px solid #8a8174;color:#463f37;font:9px 'DM Mono';text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
+.hero.wrap{width:100%;max-width:none;margin:0;padding:22px max(5%,calc((100% - var(--max))/2)) 56px;background:var(--graphite);color:#f2ede4}
+.crumb{font:9px 'DM Mono';color:#a89e8f;text-transform:uppercase;letter-spacing:.12em;margin:8px 0 26px}.crumb a{color:var(--copper-light)}
+.hero-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:5%;min-height:590px;align-items:stretch}
+.hero-copy{display:flex;flex-direction:column;justify-content:space-between;padding:28px 0 8px}
+.tag{display:inline-flex;align-items:center;gap:8px;border:0;border-left:2px solid var(--copper);color:#e8ddcb;padding:5px 0 5px 12px;width:max-content;font-size:9px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--copper);display:inline-block}
+.hero h1{font:600 clamp(60px,8vw,112px)/.84 'Space Grotesk';letter-spacing:-.09em;margin:30px 0 24px;color:#f7f2e8}.hero h1 span{color:var(--copper-light)}
+.lead{font-size:14px;line-height:1.9;color:#c0b8aa;max-width:430px}
+.hero-actions{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;background:var(--copper);color:#1a1410;padding:15px 18px;border:1px solid var(--copper);font:9px 'DM Mono';text-transform:uppercase;letter-spacing:.1em;transition:.2s;cursor:pointer}
+.btn.secondary{background:transparent;color:#f2ede4;border-color:#7a6f5e}.btn:hover{transform:translateY(-3px)}
+.hero-meta{display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid #3d3a34;padding-top:20px;margin-top:44px}.hero-meta div{display:flex;flex-direction:column;gap:7px}.hero-meta small{font:9px 'DM Mono';color:#9b9182;text-transform:uppercase;letter-spacing:.1em}.hero-meta strong{font:500 13px 'Space Grotesk';color:#f2ede4}
+.hero-image-container{position:relative;min-height:590px;background:transparent;overflow:visible;border:none;display:flex;align-items:center;justify-content:center}
+.hero-image-container img{width:100%;height:100%;object-fit:contain;object-position:center}
+.art-stamp{position:absolute;top:18px;left:18px;background:var(--copper);color:#17120e;z-index:3;padding:10px 12px;font:9px 'DM Mono';letter-spacing:.1em}
+.art-corner{position:absolute;bottom:18px;right:18px;font:9px 'DM Mono';color:#f2ede4;letter-spacing:.14em;text-transform:uppercase;z-index:3;text-shadow:0 2px 4px rgba(0,0,0,.5)}
+.notice{max-width:980px;margin:24px auto 0;border:0;border-top:1px solid #4a443b;background:transparent;color:#b8ae9e;padding:14px 0 0;font-size:10px;line-height:1.8}.notice b{color:#e8a07a}
+.quickbar{background:var(--paper2);border:0;display:grid;grid-template-columns:repeat(4,1fr);padding:0 max(5%,calc((100% - var(--max))/2))}.quickbar div{padding:22px 18px;border:0;border-right:1px solid #d6d2c8}.quickbar div:last-child{border:0}.quickbar small{display:block;font:9px 'DM Mono';color:#8a8174;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}.quickbar strong{font:500 14px 'Space Grotesk';color:#2a2521}
+.section{padding:105px 0;background:var(--paper);color:var(--ink)}
+.section[style],#electronics{background:var(--paper2)!important;border:0!important}
+.section-head{display:grid;grid-template-columns:1fr minmax(240px,390px);align-items:end;gap:40px;margin-bottom:48px;padding-bottom:25px;border-bottom:1px solid var(--line)}
+.section-head h2{font:600 clamp(46px,6vw,78px)/.9 'Space Grotesk';letter-spacing:-.085em;margin:13px 0 0;color:var(--ink)}
+.section-head p{max-width:390px;color:#77736c;font-size:12px;line-height:1.9;margin:0 0 3px}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #d1cbc0}.tech{background:transparent;border:0;border-bottom:1px solid #d1cbc0;padding:28px 28px 32px 0;margin-right:25px;min-height:210px;box-shadow:none;overflow:visible;position:relative}.tech:nth-child(3n){margin-right:0}.tech .techno{font:9px 'DM Mono';color:#b06a3c;letter-spacing:.12em}.tech h3{font:600 23px 'Space Grotesk';margin:20px 0 10px;color:#1e1b18;letter-spacing:-.04em}.tech p{font-size:11px;line-height:1.9;color:#77736c;margin:0}.tech:before{display:none}
+.diagram-wrap{background:#efece5;color:#1b1b1b;padding:30px;border:1px solid #d6d2c8;border-radius:0;overflow:hidden;box-shadow:0 14px 35px #2a252108}.diagram-top{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:15px}.diagram-top h3{font:600 30px 'Space Grotesk';letter-spacing:-1px;margin:0;color:#1b1b1b}.diagram-top p{font-size:10px;line-height:1.7;color:#77736c;max-width:360px;margin:0}.diagram{width:100%;height:auto;display:block;min-width:680px}.diagram-scroll{overflow-x:auto}.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font:9px 'DM Mono';text-transform:uppercase;color:#6b655c}.legend i{display:inline-block;width:19px;height:3px;vertical-align:middle;margin-right:6px}.wire-note{font-size:11px;line-height:1.8;color:#6b655c;margin-top:14px;border-top:1px solid #d6d2c8;padding-top:13px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:42px}.pinbox{background:transparent;border:0;border-top:1px solid var(--line);padding:24px 0;box-shadow:none}.pinbox h3{font:600 25px 'Space Grotesk';margin:0;color:var(--ink)}.pinbox p{font-size:11px;color:#77736c;line-height:1.8}.pin-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:16px}.pin-table th,.pin-table td{text-align:left;padding:12px 10px;border-bottom:1px solid #d6d2c8}.pin-table th{font:9px 'DM Mono';text-transform:uppercase;color:#8a8174}.pin-table td:first-child{font:11px 'DM Mono';font-weight:500;color:#3a322a}.pin-table tr:last-child td{border-bottom:0}
+.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 55px;border-top:1px solid var(--line)}.build-step{background:transparent;border:0;border-bottom:1px solid var(--line);padding:28px 0 30px;min-height:0;box-shadow:none;overflow:visible}.step-no{font-size:9px;color:#9a7c5a}.build-step h3{font:600 24px 'Space Grotesk';margin:14px 0 9px;color:var(--ink);letter-spacing:-.04em}.build-step p{font-size:11px;line-height:1.9;color:#77736c;max-width:470px}.build-step small{display:block;color:#9a9284;font:9px 'DM Mono';margin-top:14px;letter-spacing:.1em}.build-step:before{display:none}
+.video-card{background:transparent;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.2fr .8fr;min-height:330px;box-shadow:none}.video-screen{position:relative;min-height:330px;background:linear-gradient(140deg,#3a332b,#1c1a16);display:grid;place-items:center;overflow:hidden}.video-screen:after{content:'ISOMETRIC BUILD PREVIEW';position:absolute;bottom:20px;font:9px 'DM Mono';letter-spacing:.14em;color:#d6cdbe}.play{width:68px;height:68px;border:1px solid var(--copper);border-radius:50%;display:grid;place-items:center;color:var(--copper);font-size:22px}.video-copy{padding:35px 0 35px 45px;display:flex;flex-direction:column;justify-content:center}.video-copy h3{font:600 34px/1 'Space Grotesk';letter-spacing:-1.7px;margin:14px 0;color:var(--ink)}.video-copy p{font-size:11px;line-height:1.9;color:#77736c}.video-copy .tag{margin-top:12px;color:#9a7c5a;border-color:var(--copper)}
+#firmware.section{background:var(--graphite)!important;color:#f2ede4;border:0!important}#firmware .section-head{border-color:#3d3a34}#firmware .section-head h2{color:#f2ede4}#firmware .section-head p{color:#b8ae9e}#firmware .eyebrow{color:var(--copper-light)}
+.code-shell{background:#0e0d0b;border:1px solid #3a3732;box-shadow:none}.code-head{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border-bottom:1px solid #3a3732;gap:15px;background:#22201c}.code-head span{font:9px 'DM Mono';color:#d6cdbe;letter-spacing:.1em}.code-actions{display:flex;gap:8px}.code-actions button{background:transparent;border:1px solid #6b6458;color:#e8e0d2;padding:9px 12px;font:9px 'DM Mono';text-transform:uppercase}.code-actions button:hover{background:var(--copper);color:#17120e}.code-scroll{max-height:620px;overflow:auto;padding:22px}.code-scroll pre{margin:0;white-space:pre;tab-size:2;color:#d8cebe;font:11px/1.7 'DM Mono',monospace}.code-scroll code{font:inherit}.code-foot{padding:13px 18px;border-top:1px solid #3a3732;color:#9a9284;font-size:10px;line-height:1.7}
+.faq{border-top:1px solid var(--line);padding:20px 0}.faq:last-child{border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font:600 16px 'Space Grotesk';color:var(--ink)}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:'+';font:18px 'DM Mono';color:#b06a3c}.faq[open] summary:after{content:'−'}.faq p{font-size:11px;line-height:1.9;color:#77736c;max-width:800px}
+.store-section{background:var(--graphite);padding:100px 0;color:#f2ede4;border-top:1px solid #3a3732;border-bottom:1px solid #3a3732}
+.store-section .section-head{border-bottom:1px solid #3d3a34;margin-bottom:60px}
+.store-section .eyebrow{color:var(--copper-light)}.store-section .section-head h2{color:#f2ede4}.store-section .section-head p{color:#b8ae9e}
+.store-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.store-card{background:#22201c;border-radius:8px;padding:40px;display:flex;flex-direction:column;position:relative;border:1px solid #3a3732}
+.store-img-container{width:100%;height:280px;display:flex;align-items:center;justify-content:center;margin-bottom:30px;background:transparent;position:relative;overflow:hidden}
+.store-img-container img{max-width:100%;max-height:100%;object-fit:contain;filter:none;transition:transform .4s cubic-bezier(.175,.885,.32,1.275)}
+.store-card:hover .store-img-container img{transform:scale(1.05) translateY(-5px)}
+.store-card .opt-num{font:10px 'DM Mono';color:var(--copper);letter-spacing:.15em;margin-bottom:10px;display:block}
+.store-card h3{font:600 28px 'Space Grotesk';color:#fff;margin:0 0 15px;letter-spacing:-.5px}
+.store-card p{font-size:13px;line-height:1.8;color:#b8ae9e;margin:0 0 25px;flex-grow:1}
+.store-card .price{font:600 24px 'Space Grotesk';color:var(--copper-light);margin-bottom:20px;display:block}
+.delivery-info{background:#2a2723;border-left:3px solid var(--copper);padding:15px;margin-bottom:25px;border-radius:4px}
+.delivery-info p{margin:0;font-size:12px;color:#d8cebe;line-height:1.6}
+.delivery-info strong{color:var(--copper-light);display:block;margin-bottom:5px;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.buy-btn{background:var(--whatsapp);color:#fff;border:none;padding:18px 20px;font:11px 'DM Mono';text-transform:uppercase;letter-spacing:.1em;font-weight:600;cursor:pointer;transition:all .2s ease;text-align:center;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border-radius:4px}
+.buy-btn:hover{background:#1ebc57;transform:translateY(-2px);box-shadow:0 10px 20px rgba(37,211,102,.2)}
+.buy-btn svg{width:20px;height:20px;fill:currentColor}
+.floating-buy-btn{position:fixed;z-index:90;background:var(--whatsapp);color:#fff;padding:15px 25px;font:700 12px 'DM Mono';text-transform:uppercase;letter-spacing:.1em;border-radius:50px;box-shadow:0 10px 30px rgba(37,211,102,.4);display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .3s ease;border:none}
+.floating-buy-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 15px 40px rgba(37,211,102,.6)}
+@media(min-width:851px){.floating-buy-btn{right:30px;bottom:40px}}
+@media(max-width:850px){.floating-buy-btn{right:20px;bottom:20px;padding:15px 20px;font-size:11px}}
+.store-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:20px}
+.store-modal-overlay.active{opacity:1;pointer-events:auto}
+.store-modal-content{background:var(--graphite);width:100%;max-width:1000px;border:1px solid #3a3732;border-radius:12px;position:relative;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s ease;box-shadow:0 25px 50px -12px rgba(0,0,0,.7)}
+.store-modal-overlay.active .store-modal-content{transform:translateY(0)}
+.close-modal{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.1);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background .2s}
+.close-modal:hover{background:var(--copper)}
+.modal-header{padding:40px 40px 20px;border-bottom:1px solid #3a3732}
+.modal-header .eyebrow{color:var(--copper-light);margin-bottom:10px}
+.modal-header h2{color:#fff;font:600 clamp(32px,4vw,48px)/1 'Space Grotesk';margin:0;letter-spacing:-1px}
+.modal-header p{color:#b8ae9e;font-size:14px;margin-top:10px}
+.order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:1100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
+.order-overlay.active{opacity:1;pointer-events:auto}
+.order-box{background:var(--graphite);width:100%;max-width:640px;border:1px solid #3a3732;border-radius:12px;position:relative;max-height:92vh;overflow-y:auto}
+.order-form{padding:30px 40px 40px;display:grid;gap:18px}
+.order-form label{display:block;font:9px 'DM Mono';text-transform:uppercase;letter-spacing:.12em;color:#b8ae9e;margin-bottom:8px}
+.order-form input,.order-form textarea{width:100%;background:#22201c;border:1px solid #3a3732;color:#f2ede4;padding:14px;font:13px Manrope,Arial,sans-serif;border-radius:4px}
+.order-form input:focus,.order-form textarea:focus{outline:none;border-color:var(--copper)}
+.order-form textarea{min-height:90px;resize:vertical}
+.order-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.order-summary{background:#2a2723;border-left:3px solid var(--copper);padding:16px;border-radius:4px;font-size:12px;line-height:1.9;color:#d8cebe}
+.order-summary b{color:var(--copper-light)}
+@media(max-width:900px){.store-grid{grid-template-columns:1fr;gap:20px;padding:20px}.store-modal-content{max-width:95%;max-height:95vh}.modal-header{padding:25px 20px 15px}.close-modal{top:15px;right:15px;width:35px;height:35px}.store-grid{display:flex;flex-direction:row;overflow-x:auto;gap:15px;padding-bottom:20px}.store-card{min-width:280px;padding:20px}.store-img-container{height:180px}.store-card h3{font-size:22px}.store-card p{font-size:11px}.store-card .price{font-size:18px}.delivery-info{padding:10px}.delivery-info p{font-size:10px}.buy-btn{padding:14px;font-size:10px}}
+.end-cta{background:var(--copper);color:#1a1410;padding:58px 0}.end-cta .row{display:flex;justify-content:space-between;align-items:center;gap:25px}.end-cta h2{font:600 clamp(40px,5vw,64px)/.9 'Space Grotesk';letter-spacing:-.08em;margin:12px 0}.end-cta p{font-size:12px;max-width:440px;line-height:1.8}.end-cta .btn{background:#1a1410;color:#fff;border-color:#1a1410;box-shadow:none}
+footer{padding:25px 0;color:#8a8174;font:9px 'DM Mono';text-transform:uppercase;letter-spacing:.1em;display:flex;justify-content:space-between;gap:15px}.backtop{color:#b06a3c}
+@media(max-width:850px){.navlinks{display:none}.hero.wrap{padding:20px 5% 40px}.hero-grid{display:flex;flex-direction:column;position:relative;min-height:500px}.hero-image-container{order:-1;position:absolute;inset:0;min-height:100%;width:100%;z-index:1;border-radius:8px;overflow:hidden}.hero-image-container img{width:100%;height:100%;object-fit:cover;object-position:center}.hero-image-container::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(28,28,28,.4) 0%,rgba(28,28,28,.95) 70%,rgba(28,28,28,1) 100%);z-index:2}.hero-copy{position:relative;z-index:3;padding:40px 20px 20px;min-height:500px;display:flex;flex-direction:column;justify-content:flex-end}.tag{background:rgba(28,28,28,.6);backdrop-filter:blur(4px);padding:8px 12px;border-left:2px solid var(--copper);border-radius:4px}.hero-meta{background:rgba(28,28,28,.7);backdrop-filter:blur(8px);padding:20px;border-radius:8px;border:1px solid rgba(255,255,255,.1)}.art-stamp{top:20px;left:20px}.art-corner{bottom:20px;right:20px;display:none}.quickbar{grid-template-columns:1fr 1fr}.quickbar div:nth-child(2){border-right:0}.quickbar div:nth-child(-n+2){border-bottom:1px solid #d6d2c8}.tech-grid{grid-template-columns:1fr 1fr}.tech:nth-child(3n){margin-right:25px}.tech:nth-child(2n){margin-right:0}.split{grid-template-columns:1fr}.video-card{grid-template-columns:1fr}.video-copy{padding:30px 0}.end-cta .row{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.wrap{width:90%}.hero h1{font-size:56px}.section{padding:72px 0}.section-head{display:block;padding-bottom:20px;margin-bottom:30px}.section-head p{margin-top:18px}.quickbar div{padding:16px 12px}.tech-grid,.build-grid{grid-template-columns:1fr}.tech,.tech:nth-child(2n),.tech:nth-child(3n){margin:0;padding:24px 0;min-height:0}.build-grid{gap:0}.diagram-wrap{padding:17px}.diagram-top{display:block}.diagram-top p{margin-top:10px}.code-head{align-items:flex-start;flex-direction:column}.code-actions{flex-wrap:wrap}.code-scroll{max-height:500px;padding:14px}.code-scroll pre{font-size:10px}.video-screen{min-height:230px}.video-copy h3{font-size:30px}footer{flex-direction:column}.end-cta{padding:45px 0}.order-form{padding:20px}.order-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol></svg>
+
+<button class="floating-buy-btn" onclick="openStoreModal()"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>BUY NOW</button>
+
+<header><div class="wrap nav"><a class="brand" href="index.html">EMOON<span>3D</span><small>RC CARS / MODEL COLLECTION</small></a><nav class="navlinks"><a href="index.html#models">All models</a><a href="#overview">Overview</a><a href="#buy-section">Purchase</a><a href="#wiring">Wiring</a><a href="#build">Build guide</a><a href="#firmware">Firmware</a></nav><a class="nav-cta" onclick="openStoreModal()">← Back to models</a></div></header>
+<main>
+
+<section class="hero wrap" id="overview">
+  <div class="crumb"><a href="index.html">HOME</a> / <a href="index.html#models">RC MODELS</a> / MODEL 001</div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div>
+        <span class="tag"><i class="dot"></i> FIRST EMOON3D RC MODEL</span>
+        <h1>EM-01<br><span>CONCEPT</span><br>RUNNER.</h1>
+        <p class="lead">A compact, smartphone-controlled RC car. Explore the control system, electronics, signal wiring and complete ESP32 firmware behind the first Emoon3D model.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#buy-section">BUY NOW ↓</a>
+          <a class="btn secondary" href="#firmware">VIEW ESP32 CODE ↗</a>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div><small>Control</small><strong>Wi-Fi / Phone browser</strong></div>
+        <div><small>Controller</small><strong>ESP32</strong></div>
+        <div><small>Steering</small><strong>Servo driven</strong></div>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <img src="https://github.com/Tharindumal/emoon3d/blob/main/DIY_electronic_robot_car_e4bdc7af.jpg?raw=true" alt="EM-01 Concept Runner RC Car" onerror="this.style.display='none'; this.parentElement.style.background='#2a2723'; this.parentElement.innerHTML+='<div style=\'color:#8a8174;font-family:DM Mono;font-size:12px;text-align:center;padding:20px;\'>Add your real RC car image here<br><span style=\'color:#d9713b\'>src=&quot;em01-car.jpg&quot;</span></div>';">
+      <div class="art-stamp">EMOON3D / PROJECT 001</div>
+      <div class="art-corner">Design Study / 001</div>
+    </div>
+  </div>
+  <div class="notice"><b>HOW IT WORKS:</b> The car creates its own Wi-Fi network (MY_RC_CAR). Join it with your phone, open 192.168.4.1 and drive with the two on-screen joysticks. The firmware below is the exact code running on the car.</div>
+</section>
+
+<div class="wrap quickbar">
+  <div><small>Control platform</small><strong>ESP32 Wi-Fi AP</strong></div>
+  <div><small>Phone interface</small><strong>Dual touch joysticks</strong></div>
+  <div><small>Motor control</small><strong>PWM + H-bridge</strong></div>
+  <div><small>Safety feature</small><strong>600 ms command failsafe</strong></div>
+</div>
+
+<section class="section" id="electronics" style="background:#ebe8e0;border-bottom:1px solid #d6d2c8">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">01 / THE TECHNOLOGY</div><h2>Engineered<br>to drive.</h2></div>
+      <p>Discover the technology behind your Emoon3D RC car.</p>
+    </div>
+    <div class="tech-grid">
+      <article class="tech"><span class="techno">01 / CONTROLLER</span><h3>ESP32 brain</h3><p>The ESP32 is the car's main controller. It creates its own Wi-Fi network, so your phone can connect directly without mobile data or a separate router.</p></article>
+      <article class="tech"><span class="techno">02 / CONNECTION</span><h3>Wi-Fi + WebSocket</h3><p>Connect your phone to the car and open its control page. Live wireless commands keep the steering and throttle responding as you drive.</p></article>
+      <article class="tech"><span class="techno">03 / DRIVE</span><h3>Motor driver</h3><p>A TB6612FNG motor driver controls the drive motor. The ESP32 sets speed with PWM (GPIO 25) and direction with GPIO 26 and 27. The driver is switched off through the standby pin (GPIO 33) whenever the car is stopped.</p></article>
+      <article class="tech"><span class="techno">04 / STEERING</span><h3>Servo control</h3><p>An SG90 servo steers the car. The firmware moves it between 0° and 40°, with the centre at 20°. The servo signal is released after 0.3 seconds without steering changes.</p></article>
+      <article class="tech"><span class="techno">05 / MOTOR RESPONSE</span><h3>Smooth acceleration</h3><p>The motor ramps up gradually instead of jumping to full power, and the maximum motor power is capped at 200 out of 255.</p></article>
+      <article class="tech"><span class="techno">06 / SAFETY</span><h3>Automatic stop</h3><p>If the phone stops sending driving commands, the motor automatically stops after about 0.6 seconds. Always use the physical power switch when you finish driving.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="store-section" id="buy-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">02 / PURCHASE</div><h2>Own the<br>EM-01.</h2></div>
+      <p>Choose your build. Order directly via WhatsApp.</p>
+    </div>
+    <div class="store-grid">
+      <article class="store-card">
+        <div class="store-img-container">
+          <img src="https://github.com/Tharindumal/emoon3d/blob/main/DIY_electronic_robot_car_e4bdc7af.jpg?raw=true" alt="Complete RC Car Kit 3D View" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#77736c;font-family:DM Mono;font-size:12px;text-align:center;\'>Add your 3D isometric image here<br>Complete Kit</div>';">
+        </div>
+        <span class="opt-num">OPTION 01 / READY TO RUN</span>
+        <h3>Complete RC Car Kit</h3>
+        <p>Everything needed to build and drive the EM-01 Concept Runner in one package. Includes the fully printed chassis, all electronics, wiring, and hardware.</p>
+        <div class="delivery-info"><p><strong>Delivery &amp; Payment</strong>Delivery fee Rs. 400.00 is paid in advance, before dispatch. The remaining Rs. 6,000.00 is paid by Cash on Delivery (COD). Delivery takes 4 to 14 days after your order is confirmed.</p></div>
+        <span class="price">Rs. 6,000.00</span>
+        <a href="#" onclick="openOrder('kit');return false;" class="buy-btn"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>Order via WhatsApp</a>
+      </article>
+      <article class="store-card">
+        <div class="store-img-container">
+          <img src="https://github.com/Tharindumal/emoon3d/blob/main/78b90f90-2145-4e8d-9dcc-19d5390680d9.jpeg?raw=true" alt="Chassis &amp; Printed Parts 3D View" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#77736c;font-family:DM Mono;font-size:12px;text-align:center;\'>Add your 3D isometric image here<br>Chassis &amp; Parts</div>';">
+        </div>
+        <span class="opt-num">OPTION 02 / FOR BUILDERS</span>
+        <h3>Chassis &amp; Printed Parts</h3>
+        <p>The 3D-printed mechanical parts and chassis, available separately for custom projects and DIY builders. Perfect if you already have your own electronics.</p>
+        <div class="delivery-info"><p><strong>Delivery &amp; Payment</strong>Delivery fee Rs. 400.00 is paid in advance, before dispatch. The remaining Rs. 2,000.00 is paid by Cash on Delivery (COD). Delivery takes 4 to 14 days after your order is confirmed.</p></div>
+        <span class="price">Rs. 2,000.00</span>
+        <a href="#" onclick="openOrder('chassis');return false;" class="buy-btn"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>Order via WhatsApp</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="wiring">
+  <div class="section-head">
+    <div><div class="eyebrow">03 / ELECTRONICS LAYOUT</div><h2>Signal wiring.</h2></div>
+    <p>Visual layout of the signal connections, taken directly from the ESP32 firmware.</p>
+  </div>
+  <div class="diagram-wrap">
+    <div class="diagram-top"><h3>System connection map</h3><p>Signal map · Not to scale<br>Tap or scroll horizontally on small screens.</p></div>
+    <div class="diagram-scroll">
+      <svg class="diagram" viewBox="0 0 1100 570" role="img" aria-label="Wiring diagram connecting ESP32 to motor driver, servo, motor and battery">
+        <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#6b655c" stroke-width="1"/></marker></defs>
+        <rect x="35" y="115" width="280" height="330" rx="8" fill="#23211d" stroke="#6b5a44" stroke-width="2"/><text x="175" y="151" text-anchor="middle" fill="#f0e2cc" font-family="DM Mono" font-size="18">ESP32 DEV BOARD</text><text x="175" y="177" text-anchor="middle" fill="#a89e8f" font-family="DM Mono" font-size="11">Wi-Fi controller / logic</text>
+        <g font-family="DM Mono" font-size="13" fill="#f2ede4"><text x="60" y="228">GPIO 25 · PWM</text><text x="60" y="267">GPIO 26 · IN1</text><text x="60" y="306">GPIO 27 · IN2</text><text x="60" y="345">GPIO 33 · STBY</text><text x="60" y="384">GPIO 18 · SERVO</text><text x="60" y="421">GND · COMMON</text></g>
+        <rect x="430" y="125" width="280" height="265" rx="8" fill="#2a2723" stroke="#b08968" stroke-width="2"/><text x="570" y="162" text-anchor="middle" fill="#f5e8d6" font-family="DM Mono" font-size="18">MOTOR DRIVER</text><text x="570" y="184" text-anchor="middle" fill="#e8a07a" font-family="DM Mono" font-size="12">TB6612FNG</text><g font-family="DM Mono" font-size="12" fill="#f0e8dc"><text x="455" y="230">PWMA</text><text x="455" y="266">AIN1</text><text x="455" y="302">AIN2</text><text x="455" y="338">STBY</text><text x="455" y="374">GND</text></g>
+        <rect x="825" y="120" width="230" height="125" rx="8" fill="#2a2723" stroke="#c08d5a" stroke-width="2"/><text x="940" y="157" text-anchor="middle" fill="#ffe1c4" font-family="DM Mono" font-size="16">DRIVE MOTOR</text><text x="940" y="182" text-anchor="middle" fill="#c0b8aa" font-family="DM Mono" font-size="11">Motor output A01 / A02</text><path d="M710 235H825" stroke="#e39a61" stroke-width="4" fill="none" marker-end="url(#arr)"/><path d="M710 255H795V220H825" stroke="#e39a61" stroke-width="2" fill="none"/>
+        <rect x="825" y="315" width="230" height="115" rx="8" fill="#2a2723" stroke="#7d94a3" stroke-width="2"/><text x="940" y="352" text-anchor="middle" fill="#d9efff" font-family="DM Mono" font-size="16">STEERING SERVO</text><text x="940" y="378" text-anchor="middle" fill="#c0b8aa" font-family="DM Mono" font-size="11">Signal / +V / GND</text>
+        <path d="M315 220H430" stroke="#d4a34b" stroke-width="4"/><path d="M315 259H430" stroke="#6e9dc4" stroke-width="4"/><path d="M315 298H430" stroke="#b17ac1" stroke-width="4"/><path d="M315 337H430" stroke="#a3a36b" stroke-width="4"/><path d="M315 384H770V372H825" stroke="#cc8065" stroke-width="4" fill="none"/><path d="M315 421H390V410H755V452H940V430" stroke="#7a7266" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+        <rect x="430" y="465" width="280" height="75" rx="7" fill="#eee9d9" stroke="#a89e8f"/><text x="570" y="493" text-anchor="middle" fill="#2a2521" font-family="DM Mono" font-size="14">BATTERY</text><text x="570" y="516" text-anchor="middle" fill="#77736c" font-family="DM Mono" font-size="10">Samsung 3200 mAh · 3.7 V</text><path d="M570 465V390" stroke="#a08050" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arr)"/><path d="M710 500H770V405H825" stroke="#a08050" stroke-width="3" stroke-dasharray="7 6" fill="none"/>
+        <g font-family="DM Mono" font-size="10" fill="#6b655c"><text x="350" y="207">PWM</text><text x="350" y="248">IN1</text><text x="350" y="287">IN2</text><text x="350" y="326">STBY</text><text x="710" y="358">SERVO SIGNAL</text><text x="735" y="485">POWER</text></g><text x="550" y="558" text-anchor="middle" fill="#b06a3c" font-family="DM Mono" font-size="10">Signal pins as defined in the firmware.</text>
+      </svg>
+    </div>
+    <div class="legend"><span><i style="background:#d4a34b"></i>PWM</span><span><i style="background:#6e9dc4"></i>Direction</span><span><i style="background:#b17ac1"></i>Direction</span><span><i style="background:#a3a36b"></i>Standby</span><span><i style="background:#cc8065"></i>Servo signal</span><span><i style="background:#a08050"></i>Power</span></div>
+    <div class="wire-note"><b>Note:</b> Signal connections come directly from the firmware. Battery, motor and servo power wiring is not detailed on this page. All grounds must share a common reference.</div>
+  </div>
+  <div class="split" style="margin-top:18px">
+    <div class="pinbox">
+      <div class="eyebrow">ESP32 / GPIO ASSIGNMENTS</div><h3>Signal pin reference</h3>
+      <p>These assignments are directly reflected in the supplied firmware.</p>
+      <table class="pin-table"><thead><tr><th>ESP32 pin</th><th>Connect to</th></tr></thead><tbody><tr><td>GPIO 25</td><td>Motor driver PWM / PWMA</td></tr><tr><td>GPIO 26</td><td>Motor driver IN1 / AIN1</td></tr><tr><td>GPIO 27</td><td>Motor driver IN2 / AIN2</td></tr><tr><td>GPIO 33</td><td>Motor driver STBY</td></tr><tr><td>GPIO 18</td><td>Steering servo signal</td></tr><tr><td>GND</td><td>Common signal ground</td></tr></tbody></table>
+    </div>
+    <div class="pinbox">
+      <div class="eyebrow">COMPONENTS</div><h3>Parts used</h3>
+      <p>Main electronic parts of the EM-01.</p>
+      <table class="pin-table"><tbody><tr><td>Controller</td><td>ESP32 (ESP32-D0WD-V3)</td></tr><tr><td>Motor driver</td><td>TB6612FNG</td></tr><tr><td>Steering servo</td><td>SG90</td></tr><tr><td>Battery</td><td>Samsung 3200 mAh, 3.7 V</td></tr></tbody></table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="build" style="background:#ebe8e0;border-top:1px solid #d6d2c8">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">04 / BUILD THE MODEL</div><h2>From parts<br>to first drive.</h2></div>
+      <p>How to set up and drive the EM-01.</p>
+    </div>
+    <div class="build-grid">
+      <article class="build-step"><span class="step-no">STEP 01 / PARTS</span><h3>Check your parts</h3><p>ESP32, TB6612FNG motor driver, drive motor, SG90 steering servo and battery.</p><small>SETUP</small></article>
+      <article class="build-step"><span class="step-no">STEP 02 / WIRING</span><h3>Connect the signal pins</h3><p>GPIO 25 to PWM, 26 to IN1, 27 to IN2, 33 to STBY and 18 to the servo signal. Join all grounds together.</p><small>WIRING</small></article>
+      <article class="build-step"><span class="step-no">STEP 03 / FIRMWARE</span><h3>Upload the program</h3><p>In the Arduino IDE install "esp32 by Espressif" and the "WebSockets" library by Markus Sattler. Select your ESP32 board and port, set Upload Speed to 115200 and upload the code below.</p><small>SOFTWARE</small></article>
+      <article class="build-step"><span class="step-no">STEP 04 / PHONE</span><h3>Connect your phone</h3><p>Power the car, join the Wi-Fi network MY_RC_CAR (password 12345678) and open http://192.168.4.1 in your browser.</p><small>CONTROL</small></article>
+      <article class="build-step"><span class="step-no">STEP 05 / DRIVE</span><h3>Drive</h3><p>The left joystick steers and the right joystick controls throttle. The STOP button halts the car.</p><small>DRIVING</small></article>
+      <article class="build-step"><span class="step-no">STEP 06 / SAFETY</span><h3>First test</h3><p>Lift the wheels off the ground for the first test. If the car receives no command for 0.6 seconds, the motor stops automatically.</p><small>SAFETY</small></article>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">05 / VIDEO BUILD TUTORIAL</div><h2>Watch the build<br>come together.</h2></div>
+    <p>The EM-01 build tutorial video has not been published yet.</p>
+  </div>
+  <div class="video-card">
+    <div class="video-screen"><div class="play">▶</div></div>
+    <div class="video-copy">
+      <span class="eyebrow">EMOON3D / YOUTUBE SERIES</span>
+      <h3>EM-01 Concept Runner<br>full build tutorial</h3>
+      <p>The video will be added here when it is published.</p>
+      <span class="tag">YOUTUBE VIDEO · COMING SOON</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="firmware" style="background:#1c1c1c;border-top:1px solid #3a3732">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">06 / THE SOFTWARE</div><h2>Full ESP32<br>firmware.</h2></div>
+      <p>This is the complete ESP32 sketch running on the EM-01.</p>
+    </div>
+    <div class="code-shell">
+      <div class="code-head"><span>EMOON3D_MODEL_001.ino · FULL SOURCE</span><div class="code-actions"><button onclick="copyFirmware()">COPY FULL CODE</button><button onclick="downloadFirmware()">DOWNLOAD .INO ↓</button></div></div>
+      <div class="code-scroll"><pre><code id="firmwareCode">#include &lt;WiFi.h&gt;
+#include &lt;WebServer.h&gt;
+#include &lt;WebSocketsServer.h&gt;
+#include "soc/soc.h"
+#include "soc/rtc_cntl_reg.h"
+
+// ===================================
+// TEST / TUNING SWITCHES
+// ===================================
+
+#define DISABLE_BROWNOUT true     // true = ESP32 survives short voltage dips
+#define SERVO_ENABLED    true     // set false to test if clicking comes from servo
+
+const int MOTOR_MAX_PWM = 200;    // 0-255, lower = less current
+const int RAMP_UP_STEP = 6;       // PWM added every RAMP_INTERVAL (soft start)
+const int RAMP_DOWN_STEP = 20;    // faster slow-down
+const unsigned long RAMP_INTERVAL = 10;  // ms
+
+// ===================================
+// WIFI SETTINGS
+// ===================================
+
+const char* ssid = "MY_RC_CAR";
+const char* password = "12345678";
+
+WebServer server(80);
+WebSocketsServer webSocket(81);
+
+// ===================================
+// ESP32 PIN CONNECTIONS (UNCHANGED)
+// ===================================
+
+#define MOTOR_PWM 25
+#define MOTOR_IN1 26
+#define MOTOR_IN2 27
+#define MOTOR_STBY 33
+
+#define SERVO_PIN 18
+
+// ===================================
+// MOTOR SETTINGS
+// ===================================
+
+const int PWM_FREQ = 20000;
+const int PWM_RESOLUTION = 8;
+const int THROTTLE_DEADZONE = 25;
+
+// ===================================
+// SERVO SETTINGS
+// ===================================
+
+const int SERVO_FREQ = 50;
+const int SERVO_RESOLUTION = 14;
+
+const int STEER_MIN_ANGLE = 0;
+const int STEER_MAX_ANGLE = 40;
+const int STEER_CENTER = 20;
+
+const int STEER_PULSE_MIN = 1200;   // at 0 deg
+const int STEER_PULSE_MAX = 1800;   // at 40 deg
+
+const unsigned long SERVO_IDLE_RELEASE = 300;
+
+// ===================================
+// CONTROL VARIABLES
+// ===================================
+
+int targetThrottle = 0;    // what the user asks for
+int currentThrottle = 0;   // what the motor is actually doing (ramped)
+int steering = STEER_CENTER;
+
+bool driverOn = false;
+bool servoActive = false;
+
+unsigned long lastCommandTime = 0;
+unsigned long lastSteerChange = 0;
+unsigned long lastRamp = 0;
+
+const unsigned long FAILSAFE_TIME = 600;
+
+// ===================================
+// SERVO CONTROL
+// ===================================
+
+void setSteering(int angle) {
+
+  if (!SERVO_ENABLED) return;
+
+  angle = constrain(angle, STEER_MIN_ANGLE, STEER_MAX_ANGLE);
+
+  int pulse = map(angle, STEER_MIN_ANGLE, STEER_MAX_ANGLE,
+                  STEER_PULSE_MIN, STEER_PULSE_MAX);
+
+  int duty = (pulse * 16384L) / 20000;
+
+  ledcWrite(SERVO_PIN, duty);
+
+  servoActive = true;
+  lastSteerChange = millis();
+}
+
+void releaseServo() {
+  ledcWrite(SERVO_PIN, 0);
+  servoActive = false;
+}
+
+// ===================================
+// MOTOR CONTROL
+// ===================================
+
+void driverEnable(bool on) {
+  if (on == driverOn) return;
+  driverOn = on;
+  digitalWrite(MOTOR_STBY, on ? HIGH : LOW);
+}
+
+void motorOff() {
+  ledcWrite(MOTOR_PWM, 0);
+  digitalWrite(MOTOR_IN1, LOW);
+  digitalWrite(MOTOR_IN2, LOW);
+  driverEnable(false);
+}
+
+void applyMotor(int speed) {
+
+  speed = constrain(speed, -255, 255);
+
+  if (abs(speed) &lt; THROTTLE_DEADZONE) {
+    motorOff();
+    return;
+  }
+
+  driverEnable(true);
+
+  if (speed &gt; 0) {
+    digitalWrite(MOTOR_IN1, HIGH);
+    digitalWrite(MOTOR_IN2, LOW);
+  } else {
+    digitalWrite(MOTOR_IN1, LOW);
+    digitalWrite(MOTOR_IN2, HIGH);
+  }
+
+  ledcWrite(MOTOR_PWM, abs(speed));
+}
+
+// Soft start / soft stop: called from loop()
+void updateMotorRamp() {
+
+  if (millis() - lastRamp &lt; RAMP_INTERVAL) return;
+  lastRamp = millis();
+
+  // limit max power
+  int target = constrain(targetThrottle, -MOTOR_MAX_PWM, MOTOR_MAX_PWM);
+
+  if (currentThrottle == target) return;
+
+  // slowing down or reversing -&gt; faster step, speeding up -&gt; gentle step
+  bool speedingUp = abs(target) &gt; abs(currentThrottle) &amp;&amp;
+                    (target &gt;= 0) == (currentThrottle &gt;= 0);
+  int step = speedingUp ? RAMP_UP_STEP : RAMP_DOWN_STEP;
+
+  if (currentThrottle &lt; target) {
+    currentThrottle = min(currentThrottle + step, target);
+  } else {
+    currentThrottle = max(currentThrottle - step, target);
+  }
+
+  applyMotor(currentThrottle);
+}
+
+void stopCar() {
+  targetThrottle = 0;
+  currentThrottle = 0;
+  motorOff();
+}
+
+// ===================================
+// WEB CONTROL PAGE
+// ===================================
+
+const char webpage[] PROGMEM = R"rawliteral(
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name="viewport"
+content="width=device-width, initial-scale=1, maximum-scale=1"&gt;
+&lt;title&gt;ESP32 RC CAR&lt;/title&gt;
+
+&lt;style&gt;
+body {
+  margin: 0;
+  background: #101820;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  touch-action: none;
+  user-select: none;
+}
+h2 { margin-top: 25px; }
+.status { color: #00e676; margin: 15px; }
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 45px;
+}
+.pad {
+  width: 145px;
+  height: 145px;
+  background: #263746;
+  border: 3px solid #607d8b;
+  border-radius: 50%;
+  position: relative;
+  touch-action: none;
+}
+.knob {
+  width: 65px;
+  height: 65px;
+  background: #00aaff;
+  border-radius: 50%;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  box-shadow: 0 0 15px #00aaff;
+}
+.label { margin-top: 20px; color: #b0bec5; }
+#stop {
+  margin-top: 45px;
+  padding: 15px 55px;
+  background: #e53935;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h2&gt;ESP32 RC CAR&lt;/h2&gt;
+&lt;div class="status" id="status"&gt;CONNECTING...&lt;/div&gt;
+
+&lt;div class="controls"&gt;
+  &lt;div&gt;
+    &lt;div class="pad" id="steerPad"&gt;
+      &lt;div class="knob" id="steerKnob"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="label"&gt;STEERING (0-40)&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;div class="pad" id="throttlePad"&gt;
+      &lt;div class="knob" id="throttleKnob"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="label"&gt;THROTTLE&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button id="stop"&gt;STOP&lt;/button&gt;
+
+&lt;script&gt;
+
+const STEER_CENTER = 20;
+const STEER_HALF = 20;
+
+let steer = STEER_CENTER;
+let throttle = 0;
+let ws;
+let lastSent = "";
+let lastSendTime = 0;
+
+const statusEl = document.getElementById("status");
+
+function connect() {
+  ws = new WebSocket("ws://" + location.hostname + ":81/");
+
+  ws.onopen = () =&gt; {
+    statusEl.innerText = "CONNECTED TO RC CAR";
+    statusEl.style.color = "#00e676";
+    lastSent = "";
+  };
+
+  ws.onclose = () =&gt; {
+    statusEl.innerText = "CONNECTION LOST - RECONNECTING";
+    statusEl.style.color = "#ff5252";
+    setTimeout(connect, 500);
+  };
+
+  ws.onerror = () =&gt; ws.close();
+}
+
+connect();
+
+setInterval(() =&gt; {
+  if (!ws || ws.readyState !== 1) return;
+
+  const msg = steer + "," + throttle;
+  const now = Date.now();
+
+  if (msg !== lastSent) {
+    ws.send(msg);
+    lastSent = msg;
+    lastSendTime = now;
+  }
+  else if (throttle !== 0 &amp;&amp; now - lastSendTime &gt; 250) {
+    ws.send(msg);
+    lastSendTime = now;
+  }
+}, 40);
+
+function setupJoystick(pad, knob, type) {
+
+  let pointer = null;
+  const max = 40;
+
+  function move(e) {
+    if (pointer !== e.pointerId) return;
+
+    let rect = pad.getBoundingClientRect();
+    let x = e.clientX - rect.left - rect.width / 2;
+    let y = e.clientY - rect.top - rect.height / 2;
+
+    x = Math.max(-max, Math.min(max, x));
+    y = Math.max(-max, Math.min(max, y));
+
+    knob.style.left = (40 + x) + "px";
+    knob.style.top = (40 + y) + "px";
+
+    if (type === "steer") {
+      steer = Math.round(STEER_CENTER + (x / max) * STEER_HALF);
+    }
+    if (type === "throttle") {
+      throttle = Math.round((-y / max) * 255);
+    }
+  }
+
+  function reset() {
+    pointer = null;
+    knob.style.left = "40px";
+    knob.style.top = "40px";
+
+    if (type === "steer") steer = STEER_CENTER;
+    if (type === "throttle") throttle = 0;
+  }
+
+  pad.addEventListener("pointerdown", e =&gt; {
+    if (pointer !== null) return;
+    pointer = e.pointerId;
+    pad.setPointerCapture(pointer);
+    move(e);
+  });
+
+  pad.addEventListener("pointermove", move);
+  pad.addEventListener("pointerup", reset);
+  pad.addEventListener("pointercancel", reset);
+}
+
+setupJoystick(document.getElementById("steerPad"),
+              document.getElementById("steerKnob"), "steer");
+setupJoystick(document.getElementById("throttlePad"),
+              document.getElementById("throttleKnob"), "throttle");
+
+document.getElementById("stop").onclick = () =&gt; {
+  throttle = 0;
+  steer = STEER_CENTER;
+
+  document.getElementById("throttleKnob").style.left = "40px";
+  document.getElementById("throttleKnob").style.top = "40px";
+  document.getElementById("steerKnob").style.left = "40px";
+  document.getElementById("steerKnob").style.top = "40px";
+
+  if (ws &amp;&amp; ws.readyState === 1) ws.send(steer + ",0");
+};
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+)rawliteral";
+
+// ===================================
+// WEBSOCKET EVENTS
+// ===================================
+
+void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t* payload, size_t length) {
+
+  if (type == WStype_TEXT) {
+
+    int s, t;
+
+    if (sscanf((char*)payload, "%d,%d", &amp;s, &amp;t) == 2) {
+
+      lastCommandTime = millis();
+
+      int newSteer = constrain(s, STEER_MIN_ANGLE, STEER_MAX_ANGLE);
+      if (newSteer != steering) {
+        steering = newSteer;
+        setSteering(steering);
+      }
+
+      targetThrottle = constrain(t, -255, 255);
+    }
+  }
+  else if (type == WStype_DISCONNECTED) {
+    stopCar();
+    steering = STEER_CENTER;
+    setSteering(STEER_CENTER);
+  }
+}
+
+void handleRoot() {
+  server.send_P(200, "text/html", webpage);
+}
+
+// ===================================
+// RESET REASON (for diagnosis)
+// ===================================
+
+void printResetReason() {
+  esp_reset_reason_t r = esp_reset_reason();
+  Serial.print("Reset reason: ");
+  switch (r) {
+    case ESP_RST_POWERON:  Serial.println("POWER ON (normal)"); break;
+    case ESP_RST_BROWNOUT: Serial.println("BROWNOUT (voltage dip!)"); break;
+    case ESP_RST_PANIC:    Serial.println("PANIC (code crash)"); break;
+    case ESP_RST_SW:       Serial.println("SOFTWARE RESET"); break;
+    case ESP_RST_WDT:
+    case ESP_RST_INT_WDT:
+    case ESP_RST_TASK_WDT: Serial.println("WATCHDOG"); break;
+    default:               Serial.println((int)r); break;
+  }
+}
+
+// ===================================
+// SETUP
+// ===================================
+
+void setup() {
+
+  // Motor driver OFF immediately
+  pinMode(MOTOR_STBY, OUTPUT);
+  digitalWrite(MOTOR_STBY, LOW);
+
+  pinMode(MOTOR_IN1, OUTPUT);
+  pinMode(MOTOR_IN2, OUTPUT);
+  digitalWrite(MOTOR_IN1, LOW);
+  digitalWrite(MOTOR_IN2, LOW);
+
+  pinMode(MOTOR_PWM, OUTPUT);
+  digitalWrite(MOTOR_PWM, LOW);
+
+  if (DISABLE_BROWNOUT) {
+    WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
+  }
+
+  Serial.begin(115200);
+  delay(100);
+  Serial.println();
+  printResetReason();
+
+  ledcAttach(MOTOR_PWM, PWM_FREQ, PWM_RESOLUTION);
+  ledcWrite(MOTOR_PWM, 0);
+
+  ledcAttach(SERVO_PIN, SERVO_FREQ, SERVO_RESOLUTION);
+  ledcWrite(SERVO_PIN, 0);
+
+  setSteering(STEER_CENTER);
+
+  // Wi-Fi: lower power = smaller current peaks
+  WiFi.mode(WIFI_AP);
+  WiFi.setSleep(false);
+  WiFi.softAP(ssid, password, 1, 0, 2);
+  WiFi.setTxPower(WIFI_POWER_15dBm);
+
+  Serial.println("RC CAR STARTED");
+  Serial.print("Control URL: http://");
+  Serial.println(WiFi.softAPIP());
+
+  server.on("/", handleRoot);
+  server.begin();
+
+  webSocket.begin();
+  webSocket.onEvent(onWebSocketEvent);
+
+  lastCommandTime = millis();
+}
+
+// ===================================
+// MAIN LOOP
+// ===================================
+
+void loop() {
+
+  webSocket.loop();
+  server.handleClient();
+
+  // Failsafe: no command -&gt; stop
+  if (targetThrottle != 0 &amp;&amp; millis() - lastCommandTime &gt; FAILSAFE_TIME) {
+    stopCar();
+  }
+
+  updateMotorRamp();
+
+  // Release servo signal when steering is still
+  if (servoActive &amp;&amp; millis() - lastSteerChange &gt; SERVO_IDLE_RELEASE) {
+    releaseServo();
+  }
+}</code></pre></div>
+      <div class="code-foot">Libraries used: WiFi, WebServer and WebSocketsServer (plus ESP32 SoC headers included by the board package). The sketch uses GPIO 25, 26, 27, 33 and 18. Serial Monitor: 115200 baud.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">07 / QUICK HELP</div><h2>Before first<br>power-on.</h2></div>
+    <p>How the current firmware behaves.</p>
+  </div>
+  <div>
+    <details class="faq"><summary>What happens when I connect the battery?</summary><p>When the battery is connected, the ESP32 starts, switches the motor driver off, moves the steering servo once to its 20° centre position and starts the MY_RC_CAR Wi-Fi network. The motor stays off until you move the throttle joystick.</p></details>
+    <details class="faq"><summary>How do I connect my phone?</summary><p>Join the Wi-Fi network named MY_RC_CAR using the password configured in the sketch (12345678). Open the Control URL printed in Serial Monitor. The default address is 192.168.4.1. The exact address is also printed in Serial Monitor.</p></details>
+    <details class="faq"><summary>What happens if the phone disconnects?</summary><p>On WebSocket disconnect, the firmware calls stopCar() and returns steering to centre. While driving, if no fresh command arrives for 600 milliseconds, the failsafe stops the motor.</p></details>
+    <details class="faq"><summary>Which pins does the car use?</summary><p>GPIO 25 (motor PWM), GPIO 26 (IN1), GPIO 27 (IN2), GPIO 33 (STBY) and GPIO 18 (servo signal).</p></details>
+    <details class="faq"><summary>Is the build video available?</summary><p>Not yet. It will be added to this page when it is published.</p></details>
+  </div>
+</section>
+
+<section class="end-cta">
+  <div class="wrap row">
+    <div><div class="eyebrow" style="color:#3a2416">EMOON3D / MODEL 001</div><h2>Ready to explore<br>the next model?</h2><p>Return to the RC collection to see the current release and future Emoon3D models as they are added.</p></div>
+    <a class="btn" href="index.html#models">BACK TO RC COLLECTION ↗</a>
+  </div>
+</section>
+
+</main>
+<footer class="wrap"><span>© 2026 EMOON3D / RC MODEL 001</span><span>ORDERS VIA WHATSAPP</span><a class="backtop" href="#overview">BACK TO TOP ↑</a></footer>
+
+<div class="store-modal-overlay" id="storeModal">
+  <div class="store-modal-content">
+    <button class="close-modal" onclick="closeStoreModal()">✕</button>
+    <div class="modal-header"><div class="eyebrow">EMOON3D / PURCHASE</div><h2>Own the EM-01.</h2><p>Order directly via WhatsApp.</p></div>
+    <div class="store-grid" id="modalGrid" style="padding:40px"></div>
+  </div>
+</div>
+
+<div class="order-overlay" id="orderModal">
+  <div class="order-box">
+    <button type="button" class="close-modal" onclick="closeOrder()">✕</button>
+    <div class="modal-header"><div class="eyebrow">EMOON3D / CHECKOUT</div><h2>Delivery details</h2><p id="orderProduct"></p></div>
+    <form class="order-form" id="orderForm" onsubmit="return sendOrder(event)">
+      <div><label for="oName">Full name *</label><input id="oName" required autocomplete="name"></div>
+      <div><label for="oPhone">Phone number *</label><input id="oPhone" type="tel" required autocomplete="tel" placeholder="07X XXX XXXX"></div>
+      <div><label for="oAddress">Delivery address *</label><textarea id="oAddress" required placeholder="House no., street, area"></textarea></div>
+      <div class="order-row">
+        <div><label for="oCity">City / Town *</label><input id="oCity" required></div>
+        <div><label for="oDistrict">District *</label><input id="oDistrict" required></div>
+      </div>
+      <div><label for="oPostal">Postal code</label><input id="oPostal"></div>
+      <div><label for="oNotes">Notes (optional)</label><textarea id="oNotes" placeholder="Landmark, preferred call time, etc."></textarea></div>
+      <div class="order-summary" id="orderSummary"></div>
+      <button type="submit" class="buy-btn"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>Send order on WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const firmwareText=document.getElementById('firmwareCode').textContent;
+function copyFirmware(){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(firmwareText).then(()=>alert('Full ESP32 code copied.')).catch(()=>fallbackCopy());}else fallbackCopy();}
+function fallbackCopy(){const t=document.createElement('textarea');t.value=firmwareText;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();alert('Full ESP32 code copied.');}
+function downloadFirmware(){const blob=new Blob([firmwareText],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Emoon3D_Model_001_ESP32.ino';a.click();URL.revokeObjectURL(a.href);}
+
+// Store pop-up shows the same product cards as the store section
+document.getElementById('modalGrid').innerHTML=document.querySelector('#buy-section .store-grid').innerHTML;
+const modal=document.getElementById('storeModal');
+function openStoreModal(){modal.classList.add('active');document.body.style.overflow='hidden';}
+function closeStoreModal(){modal.classList.remove('active');document.body.style.overflow='';}
+modal.addEventListener('click',e=>{if(e.target===modal)closeStoreModal();});
+
+// Order form
+const WA_NUMBER='94723431179';
+const DELIVERY_FEE=400;
+const PRODUCTS={
+  kit:{name:'Complete RC Car Kit (EM-01 Concept Runner)',price:6000},
+  chassis:{name:'Chassis & Printed Parts (EM-01 Concept Runner)',price:2000}
+};
+let currentProduct='kit';
+const rs=n=>'Rs. '+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const orderModal=document.getElementById('orderModal');
+function openOrder(key){
+  currentProduct=key;
+  const p=PRODUCTS[key];
+  document.getElementById('orderProduct').textContent=p.name;
+  document.getElementById('orderSummary').innerHTML=
+    'Product price: <b>'+rs(p.price)+'</b><br>'+
+    'Delivery fee (pay in advance): <b>'+rs(DELIVERY_FEE)+'</b><br>'+
+    'Pay on delivery (COD): <b>'+rs(p.price)+'</b><br>'+
+    'Delivery time: <b>4 to 14 days after confirmation</b>';
+  orderModal.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeOrder(){
+  orderModal.classList.remove('active');
+  if(!modal.classList.contains('active'))document.body.style.overflow='';
+}
+orderModal.addEventListener('click',e=>{if(e.target===orderModal)closeOrder();});
+function sendOrder(e){
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const phone=v('oPhone');
+  if(!/^[0-9+\s-]{9,15}$/.test(phone)){alert('Please enter a valid phone number.');return false;}
+  const p=PRODUCTS[currentProduct];
+  let msg='*NEW ORDER - EMOON3D*\n\n'+
+    '*Product:* '+p.name+'\n\n'+
+    '*Customer details*\n'+
+    'Name: '+v('oName')+'\n'+
+    'Phone: '+phone+'\n'+
+    'Address: '+v('oAddress')+'\n'+
+    'City: '+v('oCity')+'\n'+
+    'District: '+v('oDistrict')+'\n';
+  if(v('oPostal'))msg+='Postal code: '+v('oPostal')+'\n';
+  if(v('oNotes'))msg+='Notes: '+v('oNotes')+'\n';
+  msg+='\n*Payment summary*\n'+
+    'Product price: '+rs(p.price)+'\n'+
+    'Delivery fee (pay in advance): '+rs(DELIVERY_FEE)+'\n'+
+    'Pay now: '+rs(DELIVERY_FEE)+'\n'+
+    'Pay on delivery (COD): '+rs(p.price)+'\n\n'+
+    'Estimated delivery: 4 to 14 days after confirmation.\n\n'+
+    'Please confirm my order and send the delivery fee payment details. Thank you.';
+  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+  return false;
+}
+</script>
+</body></html>
